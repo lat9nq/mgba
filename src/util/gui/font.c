@@ -26,7 +26,7 @@ unsigned GUIFontSpanWidth(const struct GUIFont* font, const char* text) {
 	return width;
 }
 
-void GUIFontPrint(struct GUIFont* font, int x, int y, enum GUIAlignment align, uint32_t color, const char* text) {
+void GUIFontPrint(const struct GUIFont* font, int x, int y, enum GUIAlignment align, uint32_t color, const char* text) {
 	switch (align & GUI_ALIGN_HCENTER) {
 	case GUI_ALIGN_HCENTER:
 		x -= GUIFontSpanWidth(font, text) / 2;
@@ -78,7 +78,7 @@ void GUIFontPrint(struct GUIFont* font, int x, int y, enum GUIAlignment align, u
 	}
 }
 
-void GUIFontPrintf(struct GUIFont* font, int x, int y, enum GUIAlignment align, uint32_t color, const char* text, ...) {
+void GUIFontPrintf(const struct GUIFont* font, int x, int y, enum GUIAlignment align, uint32_t color, const char* text, ...) {
 	char buffer[256];
 	va_list args;
 	va_start(args, text);
